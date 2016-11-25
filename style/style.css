@@ -1,0 +1,9 @@
+body {
+  background-color: red;
+}
+
+.page-title {
+  height: 500px;
+  background-image: url("../src/images/wineSplash.jpg");
+  background-repeat: no-repeat;
+}

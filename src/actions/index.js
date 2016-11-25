@@ -1,23 +1,30 @@
 import axios from 'axios';
 import { SIGNIN_USER } from './types';
 import { browserHistory } from 'react-router';
+import { AUTH_ERROR } from './types';
+import { AUTH_USER } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
-export function createPost(credentials) {
-  const request = axios.post(`${ROOT_URL}/signin`, credentials).then(function(response) {
-    alert("success");
+export function authError(error) {
+  return { error, type: AUTH_ERROR };
+}
 
-    console.log(response);
-
-  })
-  .catch(function (error) {
-  alert("fail");
-    console.log(error);
-  });
-
-  return (
-    type: SIGNIN_USER,
-    payload: request
-  );
+export function signinUser({email, password}) {
+  return function(dispatch){
+    axios({
+      url: `${ROOT_URL}/signin`,
+      data: { email, password },
+      method: 'post',
+      responseType: 'json'
+    })
+    .then(response => {
+      dispatch({ type: AUTH_USER });
+      localStorage.setItem('token', response.data.token);
+      browserHistory.push('/feature');
+    })
+    .catch(function (error) {
+      dispatch(authError(response.error))
+    });
+  }
 }
