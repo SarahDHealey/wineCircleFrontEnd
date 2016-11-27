@@ -1,47 +1,46 @@
 import { signinUser } from '../../actions';
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 const validate = values => {
   const errors = {}
   if (!values.email) {
-    errors.email = 'Required'
+    errors.email = 'Email is required'
   }
   if (!values.password) {
-    errors.password = 'Required'
+    errors.password = 'Password is required'
   }
   return errors
-}
+};
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
-    <label className="col-form-label">{label}</label>
     <div>
       <input className="form-control" {...input} placeholder={label} type={type}/>
-    {touched && (error && <span>{error}</span>)}
+    {touched && (error && <div className="error"> {error}</div>)}
     </div>
   </div>
 )
 
 let Signin = (props) => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit } = props
+
   return (
     <div>
-      <h1>Signin Form</h1>
+      <label>Signin Form</label>
       <form onSubmit={props.handleSubmit(props.signinUser)}>
         <div>
-          <Field name="email" component={renderField} label="Email" type="email" className=""/>
-        </div>
-        <br />
-        <div>
-          <Field name="password" component={renderField} label="Password" type="text"/>
-        </div>
-        <br />
-        <div>
-          <button type="submit" className="btn btn-primary">Sign in</button>
+          <fieldset className="form-group">
+            <Field name="email" component={renderField} label="Email" type="email" className=""/>
+          </fieldset>
+          <fieldset className="form-group">
+            <Field name="password" component={renderField} label="Password" type="password"/>
+          </fieldset>
+          <fieldset>
+            <button type="submit" className="btn btn-primary">submit</button>
+          </fieldset>
         </div>
       </form>
     </div>
@@ -49,8 +48,9 @@ let Signin = (props) => {
 }
 
 function mapStateToProps(state) {
+  console.log(state.auth.error);
   return {
-    appState: state
+    errorMessage: state.auth.error
   };
 }
 

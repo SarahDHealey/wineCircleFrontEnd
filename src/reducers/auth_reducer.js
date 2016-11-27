@@ -13,8 +13,8 @@ const initialState = {
 export default function(state = {}, action) {
   switch (action.type) {
     case AUTH_ERROR:
-    return {...state, authenticated: false};
-    console.log('failed from reducer');
+    console.log('failed from reducer', action.payload);
+    return {...state, error: action.payload};
     case UNAUTH_USER:
       console.log('failed', action);
       console.log('failed from reducer');
