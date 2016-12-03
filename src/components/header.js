@@ -24,7 +24,7 @@ class Header extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-light">
-        <Link to="/" className="navbar-brand">WineCircle</Link>
+        <Link to="/" className="navbar-brand">DenverWineCircle</Link>
         <ul className="nav navbar-nav">
           {this.renderLinks()}
         </ul>

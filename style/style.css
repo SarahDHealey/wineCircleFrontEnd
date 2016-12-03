@@ -2,10 +2,12 @@ body {
   background-color: red;
 }
 
-.page-title {
-  height: 500px;
-  background-image: url("../src/images/wineSplash.jpg");
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../src/images/wineGlassFromBelow.jpg");
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .error {

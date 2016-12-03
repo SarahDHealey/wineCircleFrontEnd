@@ -38,7 +38,7 @@ class Signup extends Component {
   }
   renderAlert() {
     if (this.props.errorMessage) {
-      console.log('errorhelper', this.props.errorMessage);
+      // console.log('errorhelper', this.props.errorMessage);
       return (
         <div className="alert alert-danger">
           <strong>Oops! </strong>{this.props.errorMessage}
@@ -62,7 +62,7 @@ class Signup extends Component {
               <Field name="password" type="password" component={renderField} label="Password"/>
             </fieldset>
             <fieldset className="form-group">
-              <Field name="confirmPassword" type="password" component={renderField} label="ConfirmPassword"/>
+              <Field name="confirmPassword" type="password" component={renderField} label="Confirm Password"/>
             </fieldset>
             {this.renderAlert()}
             <button type="submit" className="btn btn-primary">submit</button>
