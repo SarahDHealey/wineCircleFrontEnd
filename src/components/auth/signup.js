@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const validate = values => {
   const errors = {}
-  console.log(values);
+  console.log('values in signup validate', values);
   if (!values.email) {
     errors.email = 'Email is required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -74,7 +74,7 @@ class Signup extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('in mapstate',state.auth);
+  // console.log('error from state signup', state.auth.error);
   return {
     errorMessage: state.auth.error
   };
