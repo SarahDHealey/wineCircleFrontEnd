@@ -5,17 +5,18 @@ import { Link } from 'react-router';
 class Header extends React.Component {
   renderLinks() {
     if (this.props.authenticated) {
-      return <li className="nav-item">
+      return <button type="button" className="btn btn-default navbar-btn">
         <Link className="nav-link" to="/signout">Sign Out</Link>
-      </li>
+      </button>
     } else {
       return [
-        <li className="nav-item" key={1}>
-          <Link className="nav-link" to="/signin">Sign In</Link>
-        </li>,
-        <li className="nav-item" key={2}>
-        <Link className="nav-link" to="/signup">Sign Up</Link>
-        </li>
+        <button type="button" className="btn btn-default btn-xs navbar-btn" key={1}>
+          <Link className="nav-link" to="/signin">Signin</Link>
+        </button>,
+        <button type="button" className="btn btn-default btn-xs navbar-btn" key={2}>
+        <Link className="nav-link" to="/signup">Signup</Link>
+        </button>
+
 
       ]
     }
@@ -23,11 +24,15 @@ class Header extends React.Component {
 
   render() {
     return (
-      <nav className="navbar navbar-light">
-        <Link to="/" className="navbar-brand">DenverWineCircle</Link>
-        <ul className="nav navbar-nav">
-          {this.renderLinks()}
-        </ul>
+      <nav className="navbar navbar-default navbar-fixed-top">
+        <div className="container-fluid">
+            <div className="navbar-header">
+              <a className="navbar-brand" href="/">PourNotes</a>
+            </div>
+            <div className="container-fluid navbar-right">
+              {this.renderLinks()}
+            </div>
+          </div>
       </nav>
     );
   }
