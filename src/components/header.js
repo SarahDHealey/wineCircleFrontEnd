@@ -26,13 +26,11 @@ class Header extends React.Component {
     return (
       <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container-fluid">
-            <div className="navbar-header">
-              <a className="navbar-brand" href="/">PourNotes</a>
-            </div>
-            <div className="container-fluid navbar-right">
-              {this.renderLinks()}
-            </div>
+          <a className="navbar-brand" href="/">PourNotes</a>
+          <div className="navbar-right">
+            {this.renderLinks()}
           </div>
+        </div>
       </nav>
     );
   }

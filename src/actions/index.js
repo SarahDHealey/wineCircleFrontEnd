@@ -56,7 +56,6 @@ export function signinUser({email, password}) {
       browserHistory.push('/wine_profile');
     })
     .catch(function (error) {
-      // console.log('error from actions', error.response.statusText);
       dispatch(authError(error.response.statusText));
     });
   }

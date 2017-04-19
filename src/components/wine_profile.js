@@ -9,7 +9,9 @@ class WineProfile extends Component {
 
   render() {
     return (
-      <div>{this.props.message}</div>
+      <div id="wine-profile">
+      {this.props.message}
+      </div>   
     );
   }
 }
