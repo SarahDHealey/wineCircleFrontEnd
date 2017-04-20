@@ -10,6 +10,8 @@ import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
 import WineProfile from './components/wine_profile';
+import WelcomeLayout from './components/welcome_layout'
+import ProfileLayout from './components/profile_layout'
 import RequireAuth from './components/auth/require_auth';
 import Welcome from './components/welcome';
 import reducers from './reducers';
@@ -28,13 +30,25 @@ if (token) {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route component={WelcomeLayout}>
+        <Route path="/" component={App}>
         <IndexRoute component={Welcome}/>
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
         <Route path="wine_profile" component={RequireAuth(WineProfile)} />
+        </Route>
+      </Route>
+      <Route component={ProfileLayout}>
+        <Route path="/profile" component={App}>
+          <IndexRoute component={Welcome}/>
+          <Route path="signin" component={Signin} />
+          <Route path="signout" component={Signout} />
+          <Route path="signup" component={Signup} />
+          <Route path="wine_profile" component={RequireAuth(WineProfile)} />
+        </Route>
       </Route>
     </Router>
+
   </Provider>
   , document.querySelector('.app'));
