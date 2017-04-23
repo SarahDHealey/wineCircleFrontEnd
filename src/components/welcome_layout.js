@@ -5,7 +5,7 @@ import Navbar from './header';
 class WelcomeLayout extends Component {
 	render() {
 		return(
-			<div className="container">
+			<div id="welcome-layout">
 				<div className="row">
 					<Navbar />
 				</div>

@@ -1,6 +1,4 @@
-// import React from 'react';
 
-// export default () => <div id="welcome"></div>
 
 import React, { Component } from 'react';
 

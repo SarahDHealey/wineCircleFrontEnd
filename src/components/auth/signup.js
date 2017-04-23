@@ -51,7 +51,7 @@ class Signup extends Component {
     const {handleSubmit, email, password, confirmPassword } = this.props;
 
     return (
-      <div className="container">
+      <div className="container" id="welcome">
         <label>Signup Form</label>
         <form onSubmit={this.props.handleSubmit(this.props.signupUser)}>
           <div>

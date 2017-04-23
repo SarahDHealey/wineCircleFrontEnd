@@ -1,18 +1,19 @@
 
 body {
   margin: 0 auto;
+  height: 100vh;
+  /*border: solid black;*/
+  background-image: url("../src/images/White-Spiral-Cellar-higher-res.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../src/images/White-Spiral-Cellar-higher-res.jpg");
 }
-
 #welcome {
   display: flex;
-  height: 50%;
+  flex-direction: column;
+  height: 40vh;
   width: 60vw;
   margin: 10%;
   padding: 3%;
-  color: black;
   background: rgba(255, 255, 255, .9);
   border-radius: 10px;
 }
@@ -20,18 +21,16 @@ body {
 .error {
   color: red;
 }
-
 .main {
   width: 100vw;
 }
-
 .container {
   border: solid white;
   border-radius: 10px;
-  width: 80%;
-  height: 80%; 
-  padding: 5%;
-  margin: 5%;
+  width: 100%;
+  height: 100%; 
+  padding: 0%;
+  margin: 0%;
   background: rgba(255, 255, 255, .9);
 }
 
@@ -56,6 +55,15 @@ h3 {
   margin-right: 1em;
 }
 
-#wine-profile {
-  background-color: blue;
+#profile-layout {
+  height: 100vh;
+  background-color: #FEFEF2;
+  /*background-color: #4C3B4D;*/
+}
+
+#welcome-layout {
+  height: 100vh;
+  background-image: url("../src/images/White-Spiral-Cellar-higher-res.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

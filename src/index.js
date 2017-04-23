@@ -30,25 +30,15 @@ if (token) {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route component={WelcomeLayout}>
-        <Route path="/" component={App}>
+      <Route path="/" component={App}>
         <IndexRoute component={Welcome}/>
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
-        <Route path="wine_profile" component={RequireAuth(WineProfile)} />
-        </Route>
-      </Route>
-      <Route component={ProfileLayout}>
-        <Route path="/profile" component={App}>
-          <IndexRoute component={Welcome}/>
-          <Route path="signin" component={Signin} />
-          <Route path="signout" component={Signout} />
-          <Route path="signup" component={Signup} />
+        <Route path="wine_profile" component={ProfileLayout}>
           <Route path="wine_profile" component={RequireAuth(WineProfile)} />
         </Route>
       </Route>
     </Router>
-
   </Provider>
   , document.querySelector('.app'));
