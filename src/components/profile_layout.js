@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ProfileLayout extends Component {
 	render() {
 		return(
-			<div id="profile-layout">
+			<div className="container">
 				{this.props.children}
 			</div>
 		);
