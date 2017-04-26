@@ -3,8 +3,6 @@
 /*grenadine: #DA413D*/
 /*tawny port: #672E3B*/
 
-
-
 body {
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -44,19 +42,10 @@ body {
   background: rgba(255, 255, 255, .9);
 }
 
-.navbar {
-  margin:0;
-  background-color: #DA413D !important;
-  border: solid #DA413D !important;
-
-}
-
-.navbar-brand {
-    color: #FFFFFF !important;
-}
-
 h1 {
   font-size: 1em;
+  margin: 0px;
+  padding: 0px;
 }
 
 h3 {
@@ -68,6 +57,21 @@ h3 {
   margin-bottom: 1%;
 }
 
+/*****************/
+/*navbar section*/
+/****************/
+
+.navbar {
+  margin:0;
+  background-color: #DA413D !important;
+  border: solid #DA413D !important;
+
+}
+
+.navbar-brand {
+    color: #FFFFFF !important;
+}
+
 .navbar-right {
   margin-right: 1em;
 }
@@ -76,17 +80,21 @@ h3 {
   color: #DA413D;
 }
 
+
+
+/***********************/
+/*wine profile section*/
+/*********************/
+
 #wine-profile {
-  background-color: blue;
+  background-color: #F5F3EE;
   width: 100vw;
   height: 100vh;
 }
 
-#wine-profile {
-  background-color: blue;
-  width: 100vw;
-  height: 100vh;
-}
+/*******************************/
+/*wine profile row one section*/
+/******************************/
 
 .row-one {
   width: 100%;
@@ -94,6 +102,10 @@ h3 {
   background-color: #F5F3EE;
   border: solid #F5F3EE;
 }
+
+/*******************************/
+/*wine profile row two section*/
+/******************************/
 
 .row-two {
   width: 100%;
@@ -104,18 +116,26 @@ h3 {
   border-bottom: solid 2px #DA413D;
 }
 
-.row-three {
-  width: 100%;
-  height: 100%;
-  background-color: #F5F3EE;
-  border: solid #F5F3EE;
-  padding: 1%;
-}
-
 .user-profile {
   background-color: #DFE2DB;
   height: 100%;
   width: 20%;
+  padding-left: 2%;
+}
+
+.user {
+  display: inline-block;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-top: 6%;
+}
+
+.one {
+  background-image: url('../src/images/sherlockholmes.png');
 }
 
 .wine-bottles {
@@ -124,18 +144,39 @@ h3 {
   width: 80%;
 }
 
-.user {
-  display: inline-block;
-  margin: 10%;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  /*border: solid black;*/
+/********************************/
+/*wine profile row four section*/
+/******************************/
+
+.row-four {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #F5F3EE;
+  margin-top: 10px;
 }
 
-.one {
-  background-image: url('../src/images/sherlockholmes.png');
+.following {
+  background-color: #DFE2DB;
+  height: 100%;
+  width: 20%;
+  border: solid purple;
+  padding: 1%;
+}
+
+.rated-wine-all {
+  background-color: #DFE2DB;
+  height: 100%;
+  width: 55%;
+  border: solid purple;
+  padding: 1%;
+}
+
+.local-businesses {
+  background-color: #DFE2DB;
+  height: 100%;
+  width: 25%;
+  border: solid purple;
+  padding: 1%;
 }

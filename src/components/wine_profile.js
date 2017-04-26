@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Background from './background';
-import RowOne from './row_one_layout';
-import RowTwo from './row_two_layout';
-import RowThree from './row_three_layout';
+import RowOne from './rowOne/row_one_layout';
+import RowTwo from './rowTwo/row_two_layout';
+import RowFour from './rowFour/row_four_layout';
 
 
 class WineProfile extends Component {
@@ -18,7 +18,7 @@ class WineProfile extends Component {
         <Background>
           <RowOne/>
           <RowTwo/>
-          <RowThree/>
+          <RowFour/>
         </Background>
       {this.props.message}
       </div>   
