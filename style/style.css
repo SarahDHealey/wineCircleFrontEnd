@@ -1,4 +1,5 @@
 /*https://www.w3schools.com/colors/colors_trends.asp*/
+/*https://www.crazyegg.com/blog/website-color-palettes/*/
 /*grenadine: #DA413D*/
 /*tawny port: #672E3B*/
 
@@ -121,4 +122,20 @@ h3 {
   background-color: white;
   height: 100%;
   width: 80%;
+}
+
+.user {
+  display: inline-block;
+  margin: 10%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /*border: solid black;*/
+}
+
+.one {
+  background-image: url('../src/images/sherlockholmes.png');
 }
