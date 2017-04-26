@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-export default class RowOne extends React.Component {
+export default class UserProfile extends React.Component {
 
   render() {
     return (
-      <div className="row-one">
+      <div className="user-profile">
         {this.props.children}
       </div>
     );
