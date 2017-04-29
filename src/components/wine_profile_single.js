@@ -4,10 +4,10 @@ import * as actions from '../actions';
 import Background from './background';
 import RowOne from './rowOne/row_one_layout';
 import RowTwo from './rowTwo/row_two_layout';
-import RowFour from './rowFour/row_four_layout';
+import RowFourSingle from './rowFour/row_four_single_layout';
 
 
-class WineProfile extends Component {
+class WineProfileSingle extends Component {
   componentWillMount() {
     this.props.fetchMessage();
   }
@@ -18,7 +18,7 @@ class WineProfile extends Component {
         <Background>
           <RowOne/>
           <RowTwo/>
-          <RowFour/>
+          <RowFourSingle/>
         </Background>
       {this.props.message}
       </div>   
@@ -30,4 +30,4 @@ function mapStateToProps(state) {
   return { message: state.auth.message };
 }
 
-export default connect(mapStateToProps, actions)(WineProfile);
+export default connect(mapStateToProps, actions)(WineProfileSingle);

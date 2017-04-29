@@ -9,7 +9,8 @@ import App from './components/app';
 import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
-import WineProfile from './components/wine_profile';
+import WineProfileAll from './components/wine_profile_all';
+import WineProfileSingle from './components/wine_profile_single';
 import RequireAuth from './components/auth/require_auth';
 import Welcome from './components/welcome';
 import reducers from './reducers';
@@ -33,7 +34,8 @@ ReactDOM.render(
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
-        <Route path="wine_profile" component={RequireAuth(WineProfile)} />
+        <Route path="wine_profile_library" component={RequireAuth(WineProfileAll)} />
+        <Route path="wine_profile_single" component={RequireAuth(WineProfileSingle)} />
       </Route>
     </Router>
 
