@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+//added compose
+import { createStore, compose, applyMiddleware } from 'redux';
+//added syncHistoryWithStore to hook router up to redux
+// import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
 
@@ -34,8 +37,8 @@ ReactDOM.render(
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
-        <Route path="wine_profile_library" component={RequireAuth(WineProfileAll)} />
-        <Route path="wine_profile_single" component={RequireAuth(WineProfileSingle)} />
+        <Route path="wine_profile" component={RequireAuth(WineProfileAll)} />
+        <Route path="wine_profile/:postId" component={RequireAuth(WineProfileSingle)} />
       </Route>
     </Router>
 
