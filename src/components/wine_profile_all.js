@@ -13,10 +13,13 @@ class WineProfileAll extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <Background>
-          <RowOne/>
+          <RowOne>
+            <p>Hi User ({this.props.params.userId})</p>
+          </RowOne>
           <RowTwo/>
           <RowFourLibrary/>
         </Background>
