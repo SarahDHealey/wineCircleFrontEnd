@@ -38,7 +38,7 @@ ReactDOM.render(
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
         <Route path="wine_profile/:userId" name="wine_profile" component={RequireAuth(WineProfileAll)} />
-        <Route path="wine_profile/:postId" component={RequireAuth(WineProfileSingle)} />
+        <Route path="wine_profile/:userId/:postId" name="wine_profile/single" component={RequireAuth(WineProfileSingle)} />
       </Route>
     </Router>
 
