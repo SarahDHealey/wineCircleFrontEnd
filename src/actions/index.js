@@ -53,7 +53,8 @@ export function signinUser({email, password}) {
     .then(response => {
       dispatch({ type: AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      browserHistory.push('/wine_profile/hi');
+      console.log('from actions response data for signin before push to route', response.data)
+      browserHistory.push('/wine_profile/' + response.data.userId.toString());
     })
     .catch(function (error) {
       dispatch(authError(error.response.statusText));
