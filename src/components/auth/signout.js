@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import WelcomeBackground from '../welcome_background';
 
 class Signout extends Component {
   componentWillMount() {
@@ -8,7 +9,13 @@ class Signout extends Component {
   }
 
   render() {
-    return <div>You are logged out</div>;
+    return (
+      <WelcomeBackground>
+        <div className="container">
+          <div id="signout"><h3>You are now logged out.</h3></div>
+        </div>
+      </WelcomeBackground>
+    )
   }
 }
 

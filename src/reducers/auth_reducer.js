@@ -14,7 +14,6 @@ const initialState = {
 export default function(state = {}, action) {
   switch (action.type) {
     case AUTH_ERROR:
-    // console.log('from reducer',action.payload);
     return {...state, error: action.payload};
     case UNAUTH_USER:
       return {...state, authenticated: false};

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
-export default class Following extends React.Component {
+export default class Background extends React.Component {
 
   render() {
     return (
-      <div className="following">
-				<h4>Your wine circle</h4>
+      <div id="welcome-background">
         {this.props.children}
       </div>
     );

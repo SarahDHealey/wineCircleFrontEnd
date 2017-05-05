@@ -5,19 +5,15 @@
 
 body {
   margin: 0 auto;
-  background-repeat: no-repeat;
-  background: url(../src/images/White-Spiral-Cellar-higher-res.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 #welcome {
-  display: flex;
-  height: 50%;
-  width: 60vw;
-  margin: 10%;
+  min-height: 180px;
+  min-width: 200px;
+  font-size: 1em;
+  height: 40%;
+  width: 70%;
+  margin: 0%;
   padding: 3%;
   color: black;
   background: rgba(255, 255, 255, .9);
@@ -35,21 +31,12 @@ body {
 .container {
   border: solid white;
   border-radius: 10px;
+  min-height: 205px;
   width: 80%;
-  height: 80%; 
+  height: 65%; 
   padding: 5%;
   margin: 5%;
   background: rgba(255, 255, 255, .9);
-}
-
-h1 {
-  font-size: 1em;
-  margin: 0px;
-  padding: 0px;
-}
-
-h3 {
-  margin-bottom: 1em;
 }
 
 .splashBtn {
@@ -80,7 +67,18 @@ h3 {
   color: #DA413D;
 }
 
+#welcome-background {
+  width: 100vw;
+  height: 100vh;
+  padding: 10%;
+  background-repeat: no-repeat;
+  background: url(../src/images/White-Spiral-Cellar-higher-res.jpg) no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
+}
 
 /***********************/
 /*wine profile section*/
@@ -181,4 +179,15 @@ h3 {
   width: 25%;
   border: solid purple;
   padding: 1%;
+}
+
+footer {
+  height: 20px;
+  width: 100vw;
+  background-color: black;
+}
+
+#signout {
+  padding-top: 5%;
+  padding-left: 5%;
 }

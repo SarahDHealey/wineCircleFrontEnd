@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
+import WelcomeBackground from '../welcome_background';
 
 const validate = values => {
   const errors = {}
@@ -42,21 +43,23 @@ class Signin extends Component {
     const {handleSubmit, email, password } = this.props;
 
     return (
-      <div className="container rounded">
-        <label>Signin Form</label>
-        <form onSubmit={this.props.handleSubmit(this.props.signinUser)}>
-          <div>
-            <fieldset className="form-group">
-              <Field name="email" component={renderField} label="Email" type="email"/>
-            </fieldset>
-            <fieldset className="form-group">
-              <Field name="password" component={renderField} label="Password" type="password"/>
-            </fieldset>
-            {this.renderAlert()}
-            <button type="submit" className="btn btn-primary">submit</button>
-          </div>
-        </form>
-      </div>
+      <WelcomeBackground>
+        <div className="container rounded">
+          <label>Signin Form</label>
+          <form onSubmit={this.props.handleSubmit(this.props.signinUser)}>
+            <div>
+              <fieldset className="form-group">
+                <Field name="email" component={renderField} label="Email" type="email"/>
+              </fieldset>
+              <fieldset className="form-group">
+                <Field name="password" component={renderField} label="Password" type="password"/>
+              </fieldset>
+              {this.renderAlert()}
+              <button type="submit" className="btn btn-primary">submit</button>
+            </div>
+          </form>
+        </div>
+      </WelcomeBackground>
     )
   }
 }

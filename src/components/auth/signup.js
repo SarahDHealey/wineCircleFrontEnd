@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { signupUser } from '../../actions';
 import { connect } from 'react-redux';
+import WelcomeBackground from '../welcome_background';
 
 const validate = values => {
   const errors = {}
-  console.log('values in signup validate', values);
   if (!values.email) {
     errors.email = 'Email is required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -50,24 +50,26 @@ class Signup extends Component {
     const {handleSubmit, email, password, confirmPassword } = this.props;
 
     return (
-      <div className="container">
-        <label>Signup Form</label>
-        <form onSubmit={this.props.handleSubmit(this.props.signupUser)}>
-          <div>
-            <fieldset className="form-group">
-              <Field name="email" type="email" component={renderField} label="Email"/>
-            </fieldset>
-            <fieldset className="form-group">
-              <Field name="password" type="password" component={renderField} label="Password"/>
-            </fieldset>
-            <fieldset className="form-group">
-              <Field name="confirmPassword" type="password" component={renderField} label="Confirm Password"/>
-            </fieldset>
-            {this.renderAlert()}
-            <button type="submit" className="btn btn-primary">submit</button>
-          </div>
-        </form>
-      </div>
+      <WelcomeBackground>
+        <div className="container">
+          <label>Signup Form</label>
+          <form onSubmit={this.props.handleSubmit(this.props.signupUser)}>
+            <div>
+              <fieldset className="form-group">
+                <Field name="email" type="email" component={renderField} label="Email"/>
+              </fieldset>
+              <fieldset className="form-group">
+                <Field name="password" type="password" component={renderField} label="Password"/>
+              </fieldset>
+              <fieldset className="form-group">
+                <Field name="confirmPassword" type="password" component={renderField} label="Confirm Password"/>
+              </fieldset>
+              {this.renderAlert()}
+              <button type="submit" className="btn btn-primary">submit</button>
+            </div>
+          </form>
+        </div>
+      </WelcomeBackground>
     )
   }
 }
