@@ -33,7 +33,6 @@ export function signupUser({email, password}) {
     .then(response => {
       dispatch({ type: AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      console.log('from actions response data before push to route', response.data)
       browserHistory.push('/wine_profile/' + response.data.userId.toString());
     })
     .catch(function (error) {
@@ -53,7 +52,6 @@ export function signinUser({email, password}) {
     .then(response => {
       dispatch({ type: AUTH_USER });
       localStorage.setItem('token', response.data.token);
-      console.log('from actions response data for signin before push to route', response.data)
       browserHistory.push('/wine_profile/' + response.data.userId.toString());
     })
     .catch(function (error) {
