@@ -16,23 +16,44 @@ class WineBottles extends Component {
   }
 
   componentDidMount() {
+    this.mediaHandler()
+  }
+
+  mediaHandler() {
     axios.get('http://www.localhost:3090/wine_profile/1', {
       headers: { authorization: localStorage.getItem('token') }
     })
-    .then(res => {
+    .then((res) => {
       const wines = res.data.wines;
-      this.setState({ wines });
+      this.setState({ wines })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+
+  mediaPrinter(array) {
+  return array.map(function(wine) {
+    const image = wine.wine_bottle_img;
+    console.log(wine.wine_bottle_img)
+    return <img
+      className="bottle-img"
+      key={wine.id}
+      src={image}
+      width="50" 
+      height= "148" />
     })
   }
 
   render() {
+    // console.log('image url', this.state.wines)
     // const { params } = this.props;
     // const { userId } = params
     return (
       <div className="wine-bottles">
-        <ul>
-          {this.state.wines.map(wine => <li key={wine.id}>{wine.wine_name}</li>)}
-        </ul>
+        <div>
+          {this.mediaPrinter(this.state.wines)}
+        </div>
       {this.props.message}
       </div>   
     );
