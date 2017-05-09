@@ -8,7 +8,7 @@ export default class RowTwo extends React.Component {
     return (
       <div className="row-two">
         <UserProfile/>
-        <WineBottles/>
+        <WineBottles userId={this.props.userId}/>
         {this.props.children}
       </div>
     );

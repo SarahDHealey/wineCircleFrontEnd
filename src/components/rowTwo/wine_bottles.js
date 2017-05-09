@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import { withRouter } from 'react-router';
 import axios from 'axios';
 
 class WineBottles extends Component {
@@ -20,7 +21,8 @@ class WineBottles extends Component {
   }
 
   mediaHandler() {
-    axios.get('http://www.localhost:3090/wine_profile/1', {
+    console.log('userId', this.props.userId)
+    axios.get('http://www.localhost:3090/wine_profile/{userId}', {
       headers: { authorization: localStorage.getItem('token') }
     })
     .then((res) => {
@@ -47,8 +49,10 @@ class WineBottles extends Component {
 
   render() {
     // console.log('image url', this.state.wines)
+    // console.log('this is the feed for wine_bottles ', this.props.userId);
+
     // const { params } = this.props;
-    // const { userId } = params
+    // const { userId } = this.props.userId
     return (
       <div className="wine-bottles">
         <div>
@@ -64,4 +68,4 @@ function mapStateToProps(state) {
   return { message: state.auth.message };
 }
 
-export default connect(mapStateToProps, actions)(WineBottles);
+export default withRouter(connect(mapStateToProps, actions)(WineBottles));

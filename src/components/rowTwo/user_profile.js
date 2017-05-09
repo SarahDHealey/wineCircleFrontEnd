@@ -11,7 +11,3 @@ export default class UserProfile extends React.Component {
     );
   }
 }
-
-{/*<div className="container">
-  <div class="circle"><div class=</div>
-</div>*/}

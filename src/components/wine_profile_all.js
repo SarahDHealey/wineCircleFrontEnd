@@ -21,7 +21,7 @@ class WineProfileAll extends Component {
           <RowOne>
             <p>Hi User Number ({userId})</p>
           </RowOne>
-          <RowTwo/>
+          <RowTwo userId={userId}/>
           <RowFourLibrary/>
         </Background>
       {this.props.message}
