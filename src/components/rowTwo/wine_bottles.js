@@ -21,8 +21,9 @@ class WineBottles extends Component {
   }
 
   mediaHandler() {
-    console.log('userId', this.props.userId)
-    axios.get('http://www.localhost:3090/wine_profile/{userId}', {
+    var userId = this.props.userId;
+    var BASE_URL = 'http://www.localhost:3090/wine_profile/'
+    axios.get(BASE_URL + userId, {
       headers: { authorization: localStorage.getItem('token') }
     })
     .then((res) => {
@@ -48,11 +49,6 @@ class WineBottles extends Component {
   }
 
   render() {
-    // console.log('image url', this.state.wines)
-    // console.log('this is the feed for wine_bottles ', this.props.userId);
-
-    // const { params } = this.props;
-    // const { userId } = this.props.userId
     return (
       <div className="wine-bottles">
         <div>

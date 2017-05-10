@@ -19,10 +19,10 @@ class WineProfileAll extends Component {
       <div>
         <Background>
           <RowOne>
-            <p>Hi User Number ({userId})</p>
+            <p className='profile-text'>Your PourNotes Library:</p>
           </RowOne>
           <RowTwo userId={userId}/>
-          <RowFourLibrary/>
+          <RowFourLibrary userId={userId}/>
         </Background>
       {this.props.message}
       </div>   
