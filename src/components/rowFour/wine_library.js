@@ -4,10 +4,15 @@ var axios = require('axios');
 export default class WineLibrary extends React.Component {
 
   render() {
-    return (
-			<div className="wine-library">
-        <p>I'm the whole library</p>
-			</div>
-    );
+    var wineNotes = this.props.wineNotes
+    return (<div>
+      {wineNotes.map(wine =>
+        <p key={wine.id}>{wine.note_text}</p>
+      )}
+    </div>);
   }
 }
+
+WineLibrary.propTypes = {
+  wineNotes: React.PropTypes.array.isRequired
+};

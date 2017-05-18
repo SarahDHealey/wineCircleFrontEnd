@@ -33,7 +33,8 @@ class RowFourLibrary extends React.Component {
       headers: { authorization: localStorage.getItem('token') }
     })
     .then((res) => {
-      const wine_notes = res.data;
+      const wine_notes = res.data.wine_notes;
+      const wines = res.data.wines;
       this.setState({ wine_notes })
     })
     .catch((error) => {
@@ -46,11 +47,11 @@ class RowFourLibrary extends React.Component {
       <div className="row-four">
         <Following/>
         <RatedWineAll>
-          <WineLibrary>
-            {this.state.wines_notes}
+          <WineLibrary wineNotes={this.state.wine_notes}>
           </WineLibrary>
         </RatedWineAll>
         <LocalBusinesses/>
+        {this.props.children}
         {this.props.message}
       </div>
     );
